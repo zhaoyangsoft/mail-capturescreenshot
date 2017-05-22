@@ -209,12 +209,23 @@ page.onResourceError = function(resourceError) {
 };
 
 
-
+/**
+ * 资源加载
+ * @param  {[type]} requestData    [description]
+ * @param  {[type]} networkRequest [description]
+ * @return {[type]}                [description]
+ */
 page.onResourceRequested = function(requestData, networkRequest) {
     console.log(JSON.stringify(new Date())+' Request (#' + requestData.id+' '+requestData.url + '): ' );
 };
 
 
+/**
+ * 错误处理
+ * @param  {[type]} msg   [description]
+ * @param  {[type]} trace [description]
+ * @return {[type]}       [description]
+ */
 page.onError = function(msg, trace) {
     console.log(JSON.stringify(arguments), 'arguments');
     var msgStack = ['ERROR: ' + msg];
